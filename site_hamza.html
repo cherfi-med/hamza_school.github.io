@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza School - بوابة أولياء الأمور</title>
+    <style>
+        :root {
+            --primary-purple: #6A1B9A;
+            --secondary-purple: #9C27B0;
+            --accent: #BA68C8;
+            --background: #F3E5F5;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--background);
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple));
+            padding: 2rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .floating-icons img {
+            position: absolute;
+            width: 50px;
+            opacity: 0.1;
+            animation: float 6s infinite linear;
+        }
+
+        .logo {
+            width: 150px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .qr-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .qr-card {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+        }
+
+        .qr-frame {
+            width: 250px;
+            height: 250px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .qr-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .btn-download {
+            background: linear-gradient(45deg, var(--primary-purple), var(--secondary-purple));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .step-box {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 5px solid var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .step-box:hover {
+            transform: translateX(-10px);
+        }
+
+        .credentials {
+            background: var(--background);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 1rem;
+            }
+            
+            .qr-code {
+                width: 150px;
+            }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0) rotate(360deg); }
+        }
+
+        .hero-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .motivation-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transform-style: preserve-3d;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .motivation-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .progress-steps {
+            counter-reset: step;
+            margin: 3rem 0;
+        }
+
+        .step-item {
+            position: relative;
+            padding: 2rem;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: -25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .testimonial-slider {
+            overflow-x: auto;
+            padding: 2rem 0;
+            white-space: nowrap;
+        }
+
+        .testimonial-card {
+            display: inline-block;
+            width: 300px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 0 1rem;
+            vertical-align: top;
+            white-space: normal;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="floating-icons">
+            <img src="book-icon.png" style="top:20%; left:15%">
+            <img src="schedule-icon.png" style="top:40%; right:5%">
+            <img src="chat-icon.png" style="top:70%; left:25%">
+        </div>
+        <img src="hamza_header.png" class="logo" alt="Hamza School Logo">
+        <h1 style="color: white; margin: 1rem 0;">شارك في رحلة تعليم ابنك!</h1>
+    </header>
+
+    
+    <!-- QR Hero Section -->
+    <main class="qr-hero">
+        
+        <div class="qr-card">
+            <h2 style="color: var(--primary-purple);">📱 كن شريكًا فعّالًا في العملية التعليمية!</h2>
+            <p style="font-size: 1.2em; color: #555; max-width: 600px;">
+                مع تطبيق HAMZA SCHOOL ، ستكون دائمًا على اتصال مباشر مع:
+                <br>
+                ✔ معلمي ابنك<br>
+                ✔ آخر التحديثات الدراسية<br>
+                ✔ جدول الحصص اليومي<br>
+                ✔ النتائج الفصلية أولاً بأول
+            </p>
+            <br>
+            <hr style="border-color:#9e2ce5;border-width: 1,5px;">
+            <br>
+            <p style="color: #666; margin: 1rem 0;">امسح الكود الآن وابقَ على تواصل معنا عبر حسابنا على إنستغرام! كل جديد بانتظارك!</p>
+            <div class="qr-frame">
+                <img src="app-qr-code.png" alt="Hamza School App QR Code">
+            </div>
+            <h2 style="color: var(--primary-purple); margin-bottom: 1rem;">حمّل التطبيق الآن!</h2>
+            
+            
+            <a href="hamzaschool.apk" download class="btn-download">
+                📲 تحميل مباشر
+            </a>
+        </div>
+    </main>
+
+    <div class="feature-grid">
+        <div class="feature-box">
+            <div style="font-size: 3em; color: var(--accent);">⏰</div>
+            <h3>متابعة حية</h3>
+            <p>اعرف مواعيد الحصص وأوقات التسليم بدقة</p>
+        </div>
+        
+        <div class="feature-box">
+            <div style="font-size: 3em; color: var(--accent);">📊</div>
+            <h3>تقارير مفصلة</h3>
+            <p>احصل على تحليلات أداء ابنك الأكاديمي</p>
+        </div>
+
+        <div class="feature-box">
+            <div style="font-size: 3em; color: var(--accent);">💬</div>
+            <h3>مراسلة مباشرة</h3>
+            <p>تواصل فوري مع المعلمين والإدارة</p>
+        </div>
+    </div>
+
+    <!-- Installation Steps -->
+    <div class="step-box">
+        <h2>🎯 خطوات التثبيت</h2>
+        <div style="text-align: right; margin-top: 1rem;">
+            <p>1. قم بمسح رمز الاستجابة السريعة باستخدام هاتفك</p>
+            <p>2. انقر على رابط التحميل من الموقع</p>
+            <p>3. اتبع إرشادات التثبيت على هاتفك</p>
+        </div>
+    </div>
+
+    <!-- Authentication Guide -->
+    <div class="step-box">
+        <h2>🔑 طريقة تسجيل الدخول</h2>
+        <div class="credentials">
+            <p><strong>البريد الإلكتروني:</strong> parent@hamzaschool.com</p>
+            <p><strong>كلمة المرور:</strong> HamzaTest2023</p>
+            <small style="color: var(--secondary-purple);">(سيتم إرسال بيانات الدخول الفعلية بعد التثبيت)</small>
+        </div>
+    </div>
+
+    
+
+    <!-- <div style="padding: 2rem; text-align: center; background: white;">
+        <h2 style="color: var(--secondary-purple);">📣 آراء أولياء الأمور</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-card">
+                <p>"التطبيق غير طريقة متابعتي لدراسة ابنتي بشكل كامل!"</p>
+                <strong>- والدة ياسمين</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"أشعر أنني مشارك حقيقي في العملية التعليمية"</p>
+                <strong>- والد محمد</strong>
+            </div>
+            <div class="testimonial-card">
+                <p>"المراسلة المباشرة مع المعلم وفرت وقتًا كبيرًا"</p>
+                <strong>- والدة آية</strong>
+            </div>
+        </div>
+    </div> -->
+
+    <div style="padding: 2rem; text-align: center; background: var(--background);">
+        <h2 style="color: var(--primary-purple);">❓ الأسئلة الشائعة</h2>
+        <div class="faq" style="max-width: 800px; margin: auto;">
+            <details style="margin: 1rem 0; padding: 1rem; background: white; border-radius: 10px;">
+                <summary>هل التطبيق آمن للاستخدام؟</summary>
+                <p>نعم، التطبيق يستخدم أحدث تقنيات الحماية ويتم تحديثه باستمرار</p>
+            </details>
+            
+            <details style="margin: 1rem 0; padding: 1rem; background: white; border-radius: 10px;">
+                <summary>ماذا لو نسيت كلمة المرور؟</summary>
+                <p>يمكنك استعادة كلمة المرور عبر البريد الإلكتروني المسجل</p>
+            </details>
+        </div>
+    </div>
+     <!-- Support Section -->
+     <!-- <div class="step-box" style="background: var(--primary-purple); color: white;">
+        <h2>❓ بحاجة إلى مساعدة؟</h2>
+        <p>اتصل بفريق الدعم لدينا:</p>
+        <p>📧 hamzaschool.dz@gmail.com</p> -->
+        <!-- <p>📞 0770-123-456</p> -->
+    <!-- </div> -->
+     <!-- Support Section -->
+    <div class="step-box" style="background: var(--primary-purple); color: white;">
+        <h2>❓ بحاجة إلى مساعدة؟</h2>
+        <p>اتصل بفريق الدعم لدينا:</p>
+        <p>📧 <a href="mailto:hamzaschool.dz@gmail.com" style="color: white; text-decoration: none;">hamzaschool.dz@gmail.com</a></p>
+        <!-- <p>📞 0770-123-456</p> -->
+        <p>📌 تابعونا على:</p>
+        <p>
+            <a href="https://www.facebook.com/profile.php?id=61572425315362&locale=fr_FR" target="_blank" style="color: white; text-decoration: none;">
+                <img src="facebook-icon.png" alt="Facebook" width="25"> فيسبوك
+            </a>
+        </p>
+        <p>
+            <a href="https://www.instagram.com/hamzaschool.dz/" target="_blank" style="color: white; text-decoration: none;">
+                <img src="instagram-icon.png" alt="Instagram" width="20"> إنستغرام
+            </a>
+        </p>
+    </div>
+
+    <footer>
+        <center><p>  HAMZA SCHOOL جميع الحقوق محفوظة 2025©</p></center>
+    </footer>
+</body>
+</html>
