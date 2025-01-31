@@ -102,7 +102,7 @@
             gap: 0.5rem;
             transition: all 0.3s;
         }
-
+        
         .btn-download:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
@@ -132,7 +132,6 @@
             .main-container {
                 padding: 1rem;
             }
-            
             .qr-code {
                 width: 150px;
             }
@@ -254,19 +253,16 @@
         <h1 style="color: white; margin: 1rem 0;">شارك في رحلة تعليم ابنك!</h1>
     </header>
 
-    
     <!-- QR Hero Section -->
     <main class="qr-hero">
-        
         <div class="qr-card">
             <h2 style="color: var(--primary-purple);">📱 كن شريكًا فعّالًا في العملية التعليمية!</h2>
             <p style="font-size: 1.2em; color: #555; max-width: 600px;">
                 مع تطبيق HAMZA SCHOOL ، ستكون دائمًا على اتصال مباشر مع:
                 <br>
-                ✔ معلمي ابنك<br>
-                ✔ آخر التحديثات الدراسية<br>
-                ✔ جدول الحصص اليومي<br>
-                ✔ النتائج الفصلية أولاً بأول
+                ✔ الدروس اليومية والواجبات<br>
+                ✔ استعمال الزمن والأحداث المدرسية<br>
+                ✔ تنبيهات فورية للحالات الصحية أو السلوكية
             </p>
             <br>
             <hr style="border-color:#9e2ce5;border-width: 1,5px;">
@@ -276,14 +272,11 @@
                 <img src="app-qr-code.png" alt="Hamza School App QR Code">
             </div>
             <h2 style="color: var(--primary-purple); margin-bottom: 1rem;">حمّل التطبيق الآن!</h2>
-            
-            
-            <a href="hamzaschool.apk" download class="btn-download">
-                📲 تحميل مباشر
-            </a>
+            <a href="app-release.apk" download class="btn-download">📲 تحميل مباشر</a>
         </div>
     </main>
 
+    <!-- Features Section -->
     <div class="feature-grid">
         <div class="feature-box">
             <div style="font-size: 3em; color: var(--accent);">⏰</div>
@@ -308,9 +301,11 @@
     <div class="step-box">
         <h2>🎯 خطوات التثبيت</h2>
         <div style="text-align: right; margin-top: 1rem;">
-            <p>1. قم بمسح رمز الاستجابة السريعة باستخدام هاتفك</p>
-            <p>2. انقر على رابط التحميل من الموقع</p>
-            <p>3. اتبع إرشادات التثبيت على هاتفك</p>
+            <p>1. مسح رمز QR الخاص بموقعنا الإلكتروني.</p>
+            <p>2. أو قم بالدخول إلى موقعنا عبر متصفح Chrome أو أي متصفح آخر من هاتفك.</p>
+            <p>3. اضغط على زر تحميل التطبيق ليتم تنزيله مباشرة.</p>
+            <p>4. قم بتثبيت التطبيق على هاتفك.</p>
+            <p>5. سجل الدخول باستخدام البريد الإلكتروني وكلمة المرور المرفقين إليك.</p>
         </div>
     </div>
 
@@ -318,35 +313,28 @@
     <div class="step-box">
         <h2>🔑 طريقة تسجيل الدخول</h2>
         <div class="credentials">
-            <p><strong>البريد الإلكتروني:</strong> parent@hamzaschool.com</p>
-            <p><strong>كلمة المرور:</strong> HamzaTest2023</p>
-            <small style="color: var(--secondary-purple);">(سيتم إرسال بيانات الدخول الفعلية بعد التثبيت)</small>
+            <p>للدخول إلى حسابك، اتبع الخطوات التالية:</p>
+            <ol>
+                <li>افتح التطبيق  .</li>
+                <li>في صفحة تسجيل الدخول، أدخل بريدك الإلكتروني وكلمة المرور المرفقين اليك.</li>
+                <li>اضغط على زر "تسجيل الدخول" للوصول إلى حسابك.</li>
+            </ol>
+        </div>
+        <div class="login-instructions">
+            
         </div>
     </div>
 
-    
 
-    <!-- <div style="padding: 2rem; text-align: center; background: white;">
-        <h2 style="color: var(--secondary-purple);">📣 آراء أولياء الأمور</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial-card">
-                <p>"التطبيق غير طريقة متابعتي لدراسة ابنتي بشكل كامل!"</p>
-                <strong>- والدة ياسمين</strong>
-            </div>
-            <div class="testimonial-card">
-                <p>"أشعر أنني مشارك حقيقي في العملية التعليمية"</p>
-                <strong>- والد محمد</strong>
-            </div>
-            <div class="testimonial-card">
-                <p>"المراسلة المباشرة مع المعلم وفرت وقتًا كبيرًا"</p>
-                <strong>- والدة آية</strong>
-            </div>
-        </div>
-    </div> -->
-
+    <!-- FAQ Section -->
     <div style="padding: 2rem; text-align: center; background: var(--background);">
         <h2 style="color: var(--primary-purple);">❓ الأسئلة الشائعة</h2>
         <div class="faq" style="max-width: 800px; margin: auto;">
+            <details style="margin: 1rem 0; padding: 1rem; background: white; border-radius: 10px;">
+                <summary>هل يمكنني متابعة تقدم ابني في جميع المواد الدراسية؟</summary>
+                <p>نعم، يمكنك متابعة نتائج ابنك في جميع المواد الدراسية من خلال تقارير الأداء المتوفرة في التطبيق.</p>
+            </details>
+
             <details style="margin: 1rem 0; padding: 1rem; background: white; border-radius: 10px;">
                 <summary>هل التطبيق آمن للاستخدام؟</summary>
                 <p>نعم، التطبيق يستخدم أحدث تقنيات الحماية ويتم تحديثه باستمرار</p>
@@ -358,34 +346,79 @@
             </details>
         </div>
     </div>
-     <!-- Support Section -->
-     <!-- <div class="step-box" style="background: var(--primary-purple); color: white;">
-        <h2>❓ بحاجة إلى مساعدة؟</h2>
-        <p>اتصل بفريق الدعم لدينا:</p>
-        <p>📧 hamzaschool.dz@gmail.com</p> -->
-        <!-- <p>📞 0770-123-456</p> -->
-    <!-- </div> -->
-     <!-- Support Section -->
-    <div class="step-box" style="background: var(--primary-purple); color: white;">
-        <h2>❓ بحاجة إلى مساعدة؟</h2>
-        <p>اتصل بفريق الدعم لدينا:</p>
-        <p>📧 <a href="mailto:hamzaschool.dz@gmail.com" style="color: white; text-decoration: none;">hamzaschool.dz@gmail.com</a></p>
-        <!-- <p>📞 0770-123-456</p> -->
-        <p>📌 تابعونا على:</p>
-        <p>
-            <a href="https://www.facebook.com/profile.php?id=61572425315362&locale=fr_FR" target="_blank" style="color: white; text-decoration: none;">
-                <img src="facebook-icon.png" alt="Facebook" width="25"> فيسبوك
-            </a>
+
+    <!-- Support Section -->
+    <!-- Support Section -->
+    <div class="support-section" style="background: linear-gradient(135deg, var(--primary-purple), var(--secondary-purple)); color: white; padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.2); transform: translateY(20px); animation: fadeInUp 1s ease-out forwards;">
+        <h2 style="margin-bottom: 1rem; font-size: 1.8rem;">📞 دعم فني متوفر دائمًا لمساعدتك</h2>
+        <p style="font-size: 1.2rem; line-height: 1.6;">
+            هل لديك استفسار أو تواجه مشكلة؟ نحن هنا لمساعدتك على مدار الساعة!  
         </p>
-        <p>
-            <a href="https://www.instagram.com/hamzaschool.dz/" target="_blank" style="color: white; text-decoration: none;">
-                <img src="instagram-icon.png" alt="Instagram" width="20"> إنستغرام
-            </a>
-        </p>
+
+        <div style="margin-top: 2rem; opacity: 0; animation: fadeIn 1.5s ease-out forwards 0.5s;">
+            <h3>📩 تواصل معنا عبر البريد الإلكتروني</h3>
+            <p>
+                <a href="mailto:hamzaschool.dz@gmail.com" style="color: #FFD700; font-weight: bold; text-decoration: none; transition: transform 0.3s;">
+                    hamzaschool.dz@gmail.com
+                </a>
+            </p>
+        </div>
+
+        <div style="margin-top: 2rem; opacity: 0; animation: fadeIn 1.5s ease-out forwards 1s;">
+            <h3>🌐 تابعونا على وسائل التواصل</h3>
+            <div style="display: flex; justify-content: center; gap: 25px; margin-top: 1rem;">
+                <a href="https://www.facebook.com/profile.php?id=61572425315362&locale=fr_FR" target="_blank" style="text-decoration: none; transform: scale(1); transition: transform 0.3s;">
+                    <img src="facebook-icon.png" alt="Facebook" width="50" style="border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                </a>
+                <a href="https://www.instagram.com/hamzaschool.dz/" target="_blank" style="text-decoration: none; transform: scale(1); transition: transform 0.3s;">
+                    <img src="instagram-icon.png" alt="Instagram" width="50" style="border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                </a>
+            </div>
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 1rem;">&copy; 2025 جميع الحقوق محفوظة لـ <strong>Hamza School</strong></p>
     </div>
 
-    <footer>
-        <center><p>  HAMZA SCHOOL جميع الحقوق محفوظة 2025©</p></center>
-    </footer>
+<style>
+    @keyframes fadeInUp {
+        0% { transform: translateY(20px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    .support-section a:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+        .support-section {
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .support-section h2 {
+            font-size: 1.6rem;
+        }
+
+        .support-section p {
+            font-size: 1rem;
+        }
+
+        .support-section h3 {
+            font-size: 1.4rem;
+        }
+
+        .support-section a {
+            font-size: 1.1rem;
+        }
+    }
+</style>
+
+
 </body>
 </html>
